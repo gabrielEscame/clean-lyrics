@@ -1,0 +1,7 @@
+{
+  "name": "clean-lyrics",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gabriel Escame <gabriel.escame@gmail.com>",
+  "license": "MIT"
+}
