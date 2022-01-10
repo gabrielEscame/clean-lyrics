@@ -5,7 +5,7 @@
   "author": "Gabriel Escame <gabriel.escame@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "devDependencies": {
     "@types/node": "^17.0.8",
