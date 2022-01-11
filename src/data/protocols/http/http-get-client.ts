@@ -1,3 +1,7 @@
+export type HttpGetParams = {
+  url: string
+}
+
 export interface HttpGetClint {
-  get(url: string): Promise<void>
+  get(params: HttpGetParams): Promise<void>
 }

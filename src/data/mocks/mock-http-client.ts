@@ -1,9 +1,9 @@
-import { HttpGetClint } from '../protocols/http/http-get-client'
+import { HttpGetClint, HttpGetParams } from '../protocols/http/http-get-client'
 
 export class HttpGetClientSpy implements HttpGetClint {
   url?: string
-  async get(url: string): Promise<void> {
-    this.url = url
+  async get(params: HttpGetParams): Promise<void> {
+    this.url = params.url
     return Promise.resolve()
   }
 }

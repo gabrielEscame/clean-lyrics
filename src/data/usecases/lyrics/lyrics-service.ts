@@ -7,7 +7,7 @@ export class LyricsService {
   ) {}
 
   async search(): Promise<void> {
-    await this.httpGetCleint.get(this.url)
+    await this.httpGetCleint.get({ url: this.url })
     return Promise.resolve()
   }
 }
