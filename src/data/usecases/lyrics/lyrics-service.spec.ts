@@ -1,7 +1,6 @@
 import { HttpGetClientSpy } from '../../mocks/mock-http-client'
 import { LyricsService } from './lyrics-service'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const faker = require('faker')
+import * as faker from 'faker'
 
 type SutTypes = {
   sut: LyricsService
