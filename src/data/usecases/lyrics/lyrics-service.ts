@@ -1,13 +1,15 @@
-import { HttpGetClint } from 'data/protocols/http/http-get-client'
+import { HttpGetClient } from 'data/protocols/http/http-get-client'
+import { LyricsParams } from 'domain/models'
 
 export class LyricsService {
   constructor(
     private readonly url: string,
-    private readonly httpGetCleint: HttpGetClint
+    private readonly httpGetClient: HttpGetClient
   ) {}
 
-  async search(): Promise<void> {
-    await this.httpGetCleint.get({ url: this.url })
+  async search(params: LyricsParams): Promise<void> {
+    const url = `${this.url}/${params?.artist}/${params?.title}`
+    await this.httpGetClient.get({ url })
     return Promise.resolve()
   }
 }
