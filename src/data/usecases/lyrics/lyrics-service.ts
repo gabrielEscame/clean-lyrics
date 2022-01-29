@@ -1,5 +1,5 @@
-import { HttpGetClient } from 'data/protocols/http/http-get-client'
-import { LyricsParams } from 'domain/models'
+import { HttpGetClient } from '@/data/protocols/http/http-get-client'
+import { LyricsParams } from '@/domain/models'
 
 export class LyricsService {
   constructor(

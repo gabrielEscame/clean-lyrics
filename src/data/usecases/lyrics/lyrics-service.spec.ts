@@ -1,5 +1,5 @@
-import { HttpGetClientSpy } from '../../mocks/mock-http-client'
-import { LyricsService } from './lyrics-service'
+import { HttpGetClientSpy } from '@/data/mocks/mock-http-client'
+import { LyricsService } from '@/data/usecases/lyrics/lyrics-service'
 import * as faker from 'faker'
 
 type SutTypes = {
