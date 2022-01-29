@@ -3,6 +3,6 @@ export type LyricsModel = {
 }
 
 export type LyricsParams = {
-  author: string
-  song: string
+  artist: string
+  title: string
 }
