@@ -1,4 +1,6 @@
 import { HttpGetClient } from '@/data/protocols/http/http-get-client'
+import { httpStatusCode } from '@/data/protocols/http/http-response'
+import { NotFoundError } from '@/domain/errors/not-found-error'
 import { LyricsParams } from '@/domain/models'
 
 export class LyricsService {
@@ -9,7 +11,12 @@ export class LyricsService {
 
   async search(params: LyricsParams): Promise<void> {
     const url = `${this.url}/${params?.artist}/${params?.title}`
-    await this.httpGetClient.get({ url })
-    return Promise.resolve()
+    const httpResponse = await this.httpGetClient.get({ url })
+    switch (httpResponse.statusCode) {
+      case httpStatusCode.notFound:
+        throw new NotFoundError()
+      default:
+        return Promise.resolve()
+    }
   }
 }
