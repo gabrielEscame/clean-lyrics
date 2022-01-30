@@ -2,11 +2,19 @@ import {
   HttpGetClient,
   HttpGetParams
 } from '@/data/protocols/http/http-get-client'
+import {
+  HttpResponse,
+  httpStatusCode
+} from '@/data/protocols/http/http-response'
 
 export class HttpGetClientSpy implements HttpGetClient {
   url?: string
-  async get(params: HttpGetParams): Promise<void> {
+  response: HttpResponse = {
+    statusCode: httpStatusCode.noContent
+  }
+
+  async get(params: HttpGetParams): Promise<HttpResponse> {
     this.url = params.url
-    return Promise.resolve()
+    return Promise.resolve(this.response)
   }
 }
