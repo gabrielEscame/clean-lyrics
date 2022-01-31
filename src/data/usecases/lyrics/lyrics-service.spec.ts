@@ -3,7 +3,7 @@ import { httpStatusCode } from '@/data/protocols/http/http-response'
 import { LyricsService } from '@/data/usecases/lyrics/lyrics-service'
 import { NotFoundError } from '@/domain/errors/not-found-error'
 import { UnexpectedError } from '@/domain/errors/unexpected-error'
-import { mockSearchParams } from '@/domain/test/mock-search-params'
+import { mockSearchParams } from '@/data/mocks/mock-search-params'
 import * as faker from 'faker'
 
 type SutTypes = {
