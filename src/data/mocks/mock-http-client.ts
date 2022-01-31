@@ -10,7 +10,7 @@ import {
 export class HttpGetClientSpy implements HttpGetClient {
   url?: string
   response: HttpResponse = {
-    statusCode: httpStatusCode.noContent
+    statusCode: httpStatusCode.ok
   }
 
   async get(params: HttpGetParams): Promise<HttpResponse> {
