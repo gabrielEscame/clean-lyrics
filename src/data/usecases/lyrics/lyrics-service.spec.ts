@@ -3,7 +3,7 @@ import { httpStatusCode } from '@/data/protocols/http/http-response'
 import { LyricsService } from '@/data/usecases/lyrics/lyrics-service'
 import { NotFoundError } from '@/domain/errors/not-found-error'
 import { UnexpectedError } from '@/domain/errors/unexpected-error'
-import { mockSearchParams } from '@/data/mocks/mock-search-params'
+import { mockLyricModel, mockSearchParams } from '@/data/mocks/mock-lyrics'
 import * as faker from 'faker'
 import { LyricsModel } from '@/domain/models'
 
@@ -30,6 +30,18 @@ describe('LyricsService', () => {
     await sut.search({ artist, title })
     expect(httpGetClientSpy.url).toEqual(finalUrl)
   })
+
+  test('Should return a lyric if HttpGetClient returns 200', async () => {
+    const { sut, httpGetClientSpy } = makeSut()
+    const httpResult = mockLyricModel()
+    httpGetClientSpy.response = {
+      statusCode: httpStatusCode.ok,
+      body: httpResult
+    }
+    const lyric = await sut.search(mockSearchParams())
+    await expect(lyric).toEqual(httpResult)
+  })
+
   test('Should throw UnexpectedError if HttpGetClient returns 400', async () => {
     const { sut, httpGetClientSpy } = makeSut()
     httpGetClientSpy.response = {
