@@ -7,13 +7,13 @@ import {
   httpStatusCode
 } from '@/data/protocols/http/http-response'
 
-export class HttpGetClientSpy implements HttpGetClient {
+export class HttpGetClientSpy<T> implements HttpGetClient<T> {
   url?: string
-  response: HttpResponse = {
+  response: HttpResponse<T> = {
     statusCode: httpStatusCode.ok
   }
 
-  async get(params: HttpGetParams): Promise<HttpResponse> {
+  async get(params: HttpGetParams): Promise<HttpResponse<T>> {
     this.url = params.url
     return Promise.resolve(this.response)
   }

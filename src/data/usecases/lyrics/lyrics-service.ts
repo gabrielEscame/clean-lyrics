@@ -2,12 +2,12 @@ import { HttpGetClient } from '@/data/protocols/http/http-get-client'
 import { httpStatusCode } from '@/data/protocols/http/http-response'
 import { NotFoundError } from '@/domain/errors/not-found-error'
 import { UnexpectedError } from '@/domain/errors/unexpected-error'
-import { LyricsParams } from '@/domain/models'
+import { LyricsModel, LyricsParams } from '@/domain/models'
 
 export class LyricsService {
   constructor(
     private readonly url: string,
-    private readonly httpGetClient: HttpGetClient
+    private readonly httpGetClient: HttpGetClient<LyricsModel>
   ) {}
 
   async search(params: LyricsParams): Promise<void> {

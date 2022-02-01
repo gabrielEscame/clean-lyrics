@@ -5,14 +5,15 @@ import { NotFoundError } from '@/domain/errors/not-found-error'
 import { UnexpectedError } from '@/domain/errors/unexpected-error'
 import { mockSearchParams } from '@/data/mocks/mock-search-params'
 import * as faker from 'faker'
+import { LyricsModel } from '@/domain/models'
 
 type SutTypes = {
   sut: LyricsService
-  httpGetClientSpy: HttpGetClientSpy
+  httpGetClientSpy: HttpGetClientSpy<LyricsModel>
 }
 
 const makeSut = (url: string = faker.internet.url()): SutTypes => {
-  const httpGetClientSpy = new HttpGetClientSpy()
+  const httpGetClientSpy = new HttpGetClientSpy<LyricsModel>()
   const sut = new LyricsService(url, httpGetClientSpy)
   return {
     sut,
