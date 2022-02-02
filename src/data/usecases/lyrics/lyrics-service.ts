@@ -1,6 +1,5 @@
 import { HttpGetClient, httpStatusCode } from '@/data/protocols/http'
-import { NotFoundError } from '@/domain/errors/not-found-error'
-import { UnexpectedError } from '@/domain/errors/unexpected-error'
+import { NotFoundError, UnexpectedError } from '@/domain/errors'
 import { LyricsModel, LyricsParams } from '@/domain/models'
 import { Lyrics } from '@/domain/usecases/lyrics'
 
