@@ -1,5 +1,5 @@
 import { HttpGetClientSpy } from '@/data/mocks/mock-http-client'
-import { httpStatusCode } from '@/data/protocols/http/http-response'
+import { httpStatusCode } from '@/data/protocols/http'
 import { LyricsService } from '@/data/usecases/lyrics/lyrics-service'
 import { NotFoundError } from '@/domain/errors/not-found-error'
 import { UnexpectedError } from '@/domain/errors/unexpected-error'

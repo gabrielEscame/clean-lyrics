@@ -1,11 +1,9 @@
 import {
   HttpGetClient,
-  HttpGetParams
-} from '@/data/protocols/http/http-get-client'
-import {
+  HttpGetParams,
   HttpResponse,
   httpStatusCode
-} from '@/data/protocols/http/http-response'
+} from '@/data/protocols/http'
 
 export class HttpGetClientSpy<T> implements HttpGetClient<T> {
   url?: string
