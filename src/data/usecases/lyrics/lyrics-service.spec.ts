@@ -1,8 +1,11 @@
-import { HttpGetClientSpy } from '@/data/mocks/mock-http-client'
+import {
+  HttpGetClientSpy,
+  mockLyricModel,
+  mockSearchParams
+} from '@/data/mocks'
 import { httpStatusCode } from '@/data/protocols/http'
 import { LyricsService } from '@/data/usecases/lyrics/lyrics-service'
 import { NotFoundError, UnexpectedError } from '@/domain/errors'
-import { mockLyricModel, mockSearchParams } from '@/data/mocks/mock-lyrics'
 import * as faker from 'faker'
 import { LyricsModel } from '@/domain/models'
 
